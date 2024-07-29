@@ -2,35 +2,32 @@ package me.hanhyur.liked.board;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
 
 class PostServiceTest {
     
     private PostService postService;
+    private PostPort postPort;
+    private PostRepository postRepository;
     
     @BeforeEach
     void setUp() {
-        postService = new PostService();
+        postRepository = new PostRepository();
+        postPort = new PostAdapter(postRepository);
+        postService = new PostService(postPort);
     }
     
     @Test
-    void createBoard() {
-        final String content = "this is fake content";
-        final String imageUrl = "image";
-        final AddPostRequest request = new AddPostRequest(content, imageUrl);
-       
+    void createPost() {
+        final AddPostRequest request = createPostEntity();
+        
         postService.addPost(request);
     }
     
-    private static class PostService {
-        public void addPost(AddPostRequest request) {
+    private static AddPostRequest createPostEntity() {
+        final String content = "this is fake content";
+        final String imageUrl = "Roughly speaking, the image URL";
+        final String location = "Seoul, Republic of Korea";
         
-        }
-    }
-    
-    private record AddPostRequest(String title, String image) {
-        private AddPostRequest {
-            Assert.hasText(image, "Image cannot be empty");
-        }
+        return new AddPostRequest(content, imageUrl, location);
     }
 }
