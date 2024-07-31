@@ -1,4 +1,4 @@
-package me.hanhyur.liked.board;
+package me.hanhyur.liked.post;
 
 import org.springframework.util.Assert;
 

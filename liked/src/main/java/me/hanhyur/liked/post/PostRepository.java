@@ -1,4 +1,4 @@
-package me.hanhyur.liked.board;
+package me.hanhyur.liked.post;
 
 import java.util.HashMap;
 import java.util.Map;

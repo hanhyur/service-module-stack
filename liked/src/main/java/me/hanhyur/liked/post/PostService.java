@@ -1,4 +1,4 @@
-package me.hanhyur.liked.board;
+package me.hanhyur.liked.post;
 
 class PostService {
     private final PostPort postPort;

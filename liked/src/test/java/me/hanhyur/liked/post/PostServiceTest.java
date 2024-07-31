@@ -1,4 +1,4 @@
-package me.hanhyur.liked.board;
+package me.hanhyur.liked.post;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
