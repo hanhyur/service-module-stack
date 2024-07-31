@@ -1,5 +1,8 @@
 package me.hanhyur.liked.post;
 
+import org.springframework.stereotype.Component;
+
+@Component
 class PostAdapter implements PostPort {
     private final PostRepository postRepository;
     

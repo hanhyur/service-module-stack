@@ -2,19 +2,14 @@ package me.hanhyur.liked.post;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 class PostServiceTest {
-    
+
+    @Autowired
     private PostService postService;
-    private PostPort postPort;
-    private PostRepository postRepository;
-    
-    @BeforeEach
-    void setUp() {
-        postRepository = new PostRepository();
-        postPort = new PostAdapter(postRepository);
-        postService = new PostService(postPort);
-    }
     
     @Test
     void createPost() {
