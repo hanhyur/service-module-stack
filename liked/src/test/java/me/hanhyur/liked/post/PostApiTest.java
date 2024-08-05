@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import me.hanhyur.liked.ApiTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -22,7 +23,7 @@ class PostApiTest extends ApiTest {
     
     private static ExtractableResponse<Response> createPostRequest(final AddPostRequest request) {
         return RestAssured.given().log().all()
-          .contentType("application/json")
+          .contentType(MediaType.APPLICATION_JSON_VALUE)
           .body(request)
           .when()
           .post("/posts")
